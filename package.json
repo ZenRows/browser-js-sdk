@@ -1,0 +1,54 @@
+{
+  "name": "@zenrows/browser-sdk",
+  "version": "1.0.0",
+  "description": "ZenRows Scraping Browser JavaScript SDK",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --dts --format cjs,esm --clean",
+    "lint": "biome check",
+    "lint:fix": "biome check --write",
+    "test": "vitest basic",
+    "test:all": "vitest"
+  },
+  "keywords": [
+    "playwright",
+    "puppeteer",
+    "stealth",
+    "scraping",
+    "testing",
+    "cdp",
+    "automation"
+  ],
+  "author": "ZenRows <success@zenrows.com>",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZenRows/browser-js-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ZenRows/browser-js-sdk/issues"
+  },
+  "homepage": "https://github.com/ZenRows/browser-js-sdk#readme",
+  "url": "https://www.zenrows.com",
+  "dependencies": {
+    "playwright-core": "^1.46.0",
+    "puppeteer-core": "^22.15.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.1",
+    "@types/node": "^20.14.2",
+    "tsup": "^8.1.0",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  }
+}

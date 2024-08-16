@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "types": ["node", "vitest/globals"],
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "verbatimModuleSyntax": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleDetection": "force",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext",
+    "outDir": "dist",
+    "lib": ["ESNext", "DOM"],
+    "declaration": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}
