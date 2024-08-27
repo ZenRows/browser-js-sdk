@@ -11,6 +11,17 @@ export type ConnectOptions = {
   /* Options to configure the proxy to use. Defaults to using worldwide
   residential proxies */
   proxy?: ProxyOptions;
+
+  /* Maximum time in seconds to keep the browser session alive. After this
+  time, the browser will be closed even if you forget to close it gracefully.
+  This is useful to avoid leaving zombie browsers leading to uncontrolled usage
+  costs.
+
+  The minimum allowed value is 60 seconds (1 minute) and the maximum
+  allowed value is 900 seconds (15 minutes). If not provided, the default
+  session TTL will be used (3 minutes).
+   */
+  sessionTTL?: number;
 };
 
 export type ProxyOptions = {

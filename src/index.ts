@@ -1,5 +1,5 @@
 import puppeteer from "puppeteer-core";
-import { MissingAPIKeyError } from "./errors.js";
+import { MissingAPIKeyError, ParameterValidationError } from "./errors.js";
 import type {
   ClientOptions,
   ConnectOptions,
@@ -31,6 +31,7 @@ export default class ScrapingBrowser {
   /**
    * Get the WebSocket URL to connect to the ZenRows' Scraping Browser API
    * @param opts - Options to configure the connection
+   * @throws {ParameterValidationError} If an invalid option is provided
    * @returns The WebSocket URL
    */
   getConnectURL(opts: ConnectOptions = {}): string {
@@ -42,6 +43,20 @@ export default class ScrapingBrowser {
         : ProxyRegion.isValid(opts.proxy.location)
           ? `&proxy_region=${opts.proxy.location}`
           : "";
+    }
+
+    if (opts.sessionTTL) {
+      if (
+        !Number.isInteger(opts.sessionTTL) ||
+        opts.sessionTTL < 60 ||
+        opts.sessionTTL > 900
+      ) {
+        throw new ParameterValidationError(
+          "SessionTTL must be a number between 60 and 900 seconds",
+        );
+      }
+
+      url += `&session_ttl=${convertSecondsToDuration(opts.sessionTTL)}`;
     }
 
     return url;
@@ -71,6 +86,28 @@ export default class ScrapingBrowser {
     await browser.close();
     return screenshot;
   }
+}
+
+/**
+ * Convert seconds to a duration string.
+ * @param seconds - The number of seconds to convert
+ * @returns The duration string (e.g. 60s, 900s, 5m, 10m, 1m30s)
+ * @private
+ */
+function convertSecondsToDuration(seconds: number): string {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = seconds % 60;
+  let duration = "";
+
+  if (minutes > 0) {
+    duration += `${minutes}m`;
+  }
+
+  if (remainingSeconds > 0 || minutes === 0) {
+    duration += `${remainingSeconds}s`;
+  }
+
+  return duration;
 }
 
 export { ScrapingBrowser, ProxyRegion, ProxyCountry };
