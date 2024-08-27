@@ -1,6 +1,6 @@
 {
   "name": "@zenrows/browser-sdk",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "ZenRows Scraping Browser JavaScript SDK",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
