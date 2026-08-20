@@ -13,5 +13,5 @@ export class ParameterValidationError extends Error {
 }
 
 export const MissingAPIKeyError = new ConfigurationError(
-  "An API key is required to use the ZenRows Scraping Browser API",
+  "An API key is required to use the Zenrows Browser API",
 );

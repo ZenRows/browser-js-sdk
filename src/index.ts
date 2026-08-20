@@ -8,13 +8,13 @@ import type {
 import { ProxyCountry, ProxyRegion } from "./types.js";
 
 /**
- * A class to interact with the ZenRows' Scraping Browser API
+ * A class to interact with the Zenrows' Browser API
  * @throws {MissingAPIKeyError} If no API key is provided
  */
 export default class ScrapingBrowser {
-  /* The ZenRows API key to use. Can be obtained from the ZenRows dashboard */
+  /* The Zenrows API key to use. Can be obtained from the Zenrows dashboard */
   private readonly apiKey: string;
-  /* The URL of the ZenRows' Scraping Browser API */
+  /* The URL of the Zenrows' Browser API */
   private readonly apiURL: string;
 
   constructor(options: ClientOptions = {}) {
@@ -29,7 +29,7 @@ export default class ScrapingBrowser {
   }
 
   /**
-   * Get the WebSocket URL to connect to the ZenRows' Scraping Browser API
+   * Get the WebSocket URL to connect to the Zenrows' Browser API
    * @param opts - Options to configure the connection
    * @throws {ParameterValidationError} If an invalid option is provided
    * @returns The WebSocket URL
@@ -63,7 +63,7 @@ export default class ScrapingBrowser {
   }
 
   /**
-   * Take a screenshot of a page using the ZenRows' Scraping Browser API.
+   * Take a screenshot of a page using the Zenrows' Browser API.
    * @param url - The URL of the page to take a screenshot of
    * @param options - Options to configure the screenshot
    */

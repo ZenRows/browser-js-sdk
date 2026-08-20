@@ -1,7 +1,7 @@
 export type ClientOptions = {
-  /* The ZenRows API key to use. Can be obtained from the ZenRows dashboard */
+  /* The Zenrows API key to use. Can be obtained from the Zenrows dashboard */
   apiKey?: string;
-  /* The URL of the ZenRows' Scraping Browser API */
+  /* The URL of the Zenrows' Browser API */
   apiURL?: string;
   /* Whether to use an insecure WebSocket connection */
   insecure?: boolean;

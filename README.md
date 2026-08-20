@@ -1,7 +1,7 @@
 <p align="center">
     <picture>
         <source media="(prefers-color-scheme: dark)" srcset="logo/dark.svg"/>
-        <img alt="ZenRows Logo" src="logo/light.svg" width="300" />
+        <img alt="Zenrows Logo" src="logo/light.svg" width="300" />
     </picture>
 </p>
 
