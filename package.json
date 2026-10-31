@@ -42,7 +42,7 @@
   "url": "https://www.zenrows.com",
   "dependencies": {
     "playwright-core": "^1.46.0",
-    "puppeteer-core": "^22.15.0"
+    "puppeteer-core": "^25.16.0"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.1",
