@@ -6,8 +6,8 @@
 </p>
 
 <p align="center">
-    <a href="https://docs.zenrows.com">Documentation</a>
+    <a href="https://docs.zenrows.com?utm_source=github&utm_medium=readme&utm_campaign=browser-js-sdk">Documentation</a>
     <span>&nbsp;·&nbsp;</span>
-    <a href="https://www.zenrows.com/pricing">Pricing</a>
+    <a href="https://www.zenrows.com/pricing?utm_source=github&utm_medium=readme&utm_campaign=browser-js-sdk">Pricing</a>
 </p>
 <br/>
